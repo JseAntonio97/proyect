@@ -1,0 +1,87 @@
+<% include partials/_header %>
+
+
+<h1>PERSONA</h1>
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-8">
+<table class="table table-bordered table-hover">
+<thead>
+    <tr>
+<th>n</th>
+<th>NOMBRE</th>
+<th>APELLIDO Materno</th>
+<th>APELLIDO Paterno</th>
+
+<th>Estado Civil</th>
+<th>Telefono</th>
+<th>Actions</th>
+    </tr>
+
+</thead>
+<tbody>
+    <% if (data) { %>
+    <% for (var i = 0; i < data.length; i++){ %>
+<tr>
+<td><%= (i + 1)%></td>
+<td><%= data[i].nombre%></td>
+<td><%= data[i].apellido_paterno%></td>
+<td><%= data[i].apellido_materno%></td>
+<td><%= data[i].estado_civil%></td>
+<td><%= data[i].telefono%></td>
+<td>
+
+  <a href="/delete/<%= data[i].id %>" class="btn btn-danger">ELIMINAR</a>
+  <br>
+  
+  <a href="/update/<%= data[i].id %>" class="btn btn-info" >ACTUALIZAR</a>
+</td>
+</tr> 
+      <% } %>
+    <% } %>
+ 
+</tbody>
+
+
+</table>
+        </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+<form action="/add"method="post">
+<div class="form-group">
+<input type="text"name="nombre" placeholder="Nombre" class="form-control">
+</div>
+<div class="form-group">
+<input type="text"name="apellido_paterno" placeholder="Apellido Paterno" class="form-control">
+</div>
+<div class="form-group">
+<input type="text"name="apellido_materno" placeholder="Apellido Materno" class="form-control">
+</div>
+<div class="form-group">
+<input type="text"name="estado_civil" placeholder="Estado Civil" class="form-control">
+</div>
+
+
+
+<div class="form-group">
+<input type="text"name="telefono" placeholder="Telefono" class="form-control">
+</div>
+
+
+
+<button type="submit" class="btn btn-primary">GUARDAR</button>
+
+     </form>
+    </div>
+    </div>
+</div>
+
+<button type="submit" class="btn btn-danger">reportes</button>
+ 
+
+ <% include partials/_footer  %>
+
+
+
+
