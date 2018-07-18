@@ -6,7 +6,7 @@
   use express3;
 --fecha_nacimiento DATETIME  ,
   ---creatting table
-CREATE TABLE persona { persona int NOT NULL AUTO_INCREMENT, nombre varchar(255), apellido1 varchar(255), apellido2 varchar(255) } 
+--CREATE TABLE persona { persona int NOT NULL AUTO_INCREMENT, nombre varchar(255), apellido1 varchar(255), apellido2 varchar(255) } 
   ------------
 id INT AUTO_INCREMENT PRIMARY KEY,
   CREATE TABLE persona(
