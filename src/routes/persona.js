@@ -1,7 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+
 const personaController = require('../controllers/personaControllers');
+
+
+
 
 router.get('/',personaController.list); 
 router.post('/add',personaController.save);

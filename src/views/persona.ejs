@@ -5,7 +5,8 @@
 <div class="container">
     <div class="row mt-3">
         <div class="col-md-8">
-<table class="table table-bordered table-hover">
+
+<table class="table table-hover table-dark">
 <thead>
     <tr>
 <th>n</th>
@@ -50,22 +51,22 @@
             <div class="card-body">
 <form action="/add"method="post">
 <div class="form-group">
-<input type="text"name="nombre" placeholder="Nombre" class="form-control">
+<input type="text"name="nombre"  required  placeholder="Nombre" class="form-control">
 </div>
 <div class="form-group">
-<input type="text"name="apellido_paterno" placeholder="Apellido Paterno" class="form-control">
+<input type="text"name="apellido_paterno"  required  placeholder="Apellido Paterno" class="form-control">
 </div>
 <div class="form-group">
-<input type="text"name="apellido_materno" placeholder="Apellido Materno" class="form-control">
+<input type="text"name="apellido_materno" required placeholder="Apellido Materno" class="form-control">
 </div>
 <div class="form-group">
-<input type="text"name="estado_civil" placeholder="Estado Civil" class="form-control">
+<input type="text"name="estado_civil" required placeholder="Estado Civil" class="form-control">
 </div>
 
 
 
 <div class="form-group">
-<input type="text"name="telefono" placeholder="Telefono" class="form-control">
+<input type="text"name="telefono" required placeholder="Telefono" class="form-control">
 </div>
 
 
@@ -77,7 +78,55 @@
     </div>
 </div>
 
-<button type="submit" class="btn btn-danger">reportes</button>
+<div>
+    <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Nodemailer Email Example</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container"><br />
+      <h1>Send The Email</h1><br />
+      <form action="/send-email" method="post">
+        <div class="row">
+          <div class="col-md-9"></div>
+          <div class="form-group col-md-9">
+            <label for="to">To:</label>
+            <input type="email" class="form-control" name="to">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9"></div>
+          <div class="form-group col-md-9">
+            <label for="subject">Subject:</label>
+            <input type="text" class="form-control" name="subject">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9"></div>
+            <div class="form-group col-md-9">
+              <label for="body">Body:</label>
+              <textarea cols="5" rows="5"class="form-control" name="body"></textarea>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="form-group col-md-4">
+            <button type="submit" class="btn btn-success">Send</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+
+
+
+</div>
+      
  
 
  <% include partials/_footer  %>
